@@ -24,3 +24,12 @@ Install dependencies using:
 
 ```bash
 pip install sentence-transformers scikit-learn pandas pymupdf
+```
+## How It Works
+- Abstract Extraction: The script extracts the abstract section of each PDF by identifying the position of the word "abstract" and trims it until the start of a common section like "Introduction" or "Methods."
+- Text Embedding: The abstracts are converted into numerical embeddings using a pre-trained model from SentenceTransformers.
+- Clustering: K-Means clustering is applied on the embeddings to group similar papers into a specified number of clusters.
+- Organizing PDFs: The PDFs are moved to separate folders named by their cluster number, allowing you to easily navigate through related papers.
+## Usage
+Place your research papers (PDFs) in the testing pdfs/ folder.
+Run the script to extract abstracts, cluster the PDFs, and automatically organize them into folders based on their clusters.
